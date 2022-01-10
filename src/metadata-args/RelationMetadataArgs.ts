@@ -2,6 +2,7 @@ import {RelationType} from "../metadata/types/RelationTypes";
 import {RelationOptions} from "../decorator/options/RelationOptions";
 import {PropertyTypeFactory} from "../metadata/types/PropertyTypeInFunction";
 import {RelationTypeInFunction} from "../metadata/types/RelationTypeInFunction";
+import {RelationNamingMetadataArgs} from "./RelationNamingMetadataArgs";
 
 /**
  * Arguments for RelationMetadata class.
@@ -66,5 +67,11 @@ export interface RelationMetadataArgs {
      * Indicates if this is a children (can be only one-to-many relation) relation in the tree tables.
      */
     readonly isTreeChildren?: boolean;
+
+    /**
+     * Names for foreign keys and indices.
+     * By default these are auto generated.
+     */
+    readonly naming?: RelationNamingMetadataArgs;
 
 }

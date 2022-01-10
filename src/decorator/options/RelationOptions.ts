@@ -1,6 +1,7 @@
 import {DeferrableType} from "../../metadata/types/DeferrableType";
 import {OnDeleteType} from "../../metadata/types/OnDeleteType";
 import {OnUpdateType} from "../../metadata/types/OnUpdateType";
+import {RelationNamingOptions} from "./RelationNamingOptions";
 
 /**
  * Describes all relation's options.
@@ -75,5 +76,12 @@ export interface RelationOptions {
      * When a child row is removed from its parent, determines if the child row should be orphaned (default) or deleted.
      */
     orphanedRowAction?: "nullify" | "delete" | "soft-delete";
+
+    /**
+     * Names for foreign keys and indices.
+     * Foreign key names are only used when foreign key constraints are made (see createForeignKeyConstraint).
+     * By default these are auto generated.
+     */
+    naming?: RelationNamingOptions;
 
 }

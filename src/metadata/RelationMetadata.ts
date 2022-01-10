@@ -168,6 +168,13 @@ export class RelationMetadata {
     createForeignKeyConstraints: boolean = true;
 
     /**
+     * User specified names to use for building foreign keys and indices for the relation.
+     * Names are only used when the foreign key or index is generated.
+     * By default names are auto generated.
+     */
+    naming?: RelationMetadataArgs["naming"];
+
+    /**
      * Gets the property's type to which this relation is applied.
      *
      * For example for @ManyToMany(type => Category) in Post, target will be Category.
@@ -316,6 +323,7 @@ export class RelationMetadata {
         this.isTreeParent = args.isTreeParent || false;
         this.isTreeChildren = args.isTreeChildren || false;
         this.type = args.type instanceof Function ? (args.type as () => any)() : args.type;
+        this.naming = args.options.naming;
 
         this.isOneToOne = this.relationType === "one-to-one";
         this.isOneToMany = this.relationType === "one-to-many";

@@ -32,5 +32,5 @@ export interface JoinTableMultipleColumnsOptions {
      * Works only in some databases (like postgres and mssql).
      */
     schema?: string;
-
+    
 }

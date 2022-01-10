@@ -147,6 +147,7 @@ export class JunctionEntityMetadataBuilder {
         // Note: UPDATE CASCADE clause is not supported in Oracle.
         entityMetadata.foreignKeys = relation.createForeignKeyConstraints ? [
             new ForeignKeyMetadata({
+                name: relation.naming?.foreignKeyOwnerName,
                 entityMetadata: entityMetadata,
                 referencedEntityMetadata: relation.entityMetadata,
                 columns: junctionColumns,
@@ -155,6 +156,7 @@ export class JunctionEntityMetadataBuilder {
                 onUpdate: this.connection.driver instanceof OracleDriver ? "NO ACTION" : relation.onUpdate || "CASCADE",
             }),
             new ForeignKeyMetadata({
+                name: relation.naming?.foreignKeyInverseName,
                 entityMetadata: entityMetadata,
                 referencedEntityMetadata: relation.inverseEntityMetadata,
                 columns: inverseJunctionColumns,
@@ -174,6 +176,7 @@ export class JunctionEntityMetadataBuilder {
                 entityMetadata: entityMetadata,
                 columns: junctionColumns,
                 args: {
+                    name: relation.naming?.indexOwnerName,
                     target: entityMetadata.target,
                     synchronize: true
                 }
@@ -183,6 +186,7 @@ export class JunctionEntityMetadataBuilder {
                 entityMetadata: entityMetadata,
                 columns: inverseJunctionColumns,
                 args: {
+                    name: relation.naming?.indexInverseName,
                     target: entityMetadata.target,
                     synchronize: true
                 }
