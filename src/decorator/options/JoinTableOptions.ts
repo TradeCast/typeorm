@@ -33,4 +33,9 @@ export interface JoinTableOptions {
      */
     schema?: string;
 
+    /**
+     * Whether the onUpdate on the created foreign keys should be omitted.
+     */
+    omitOnUpdate?: boolean;
+
 }

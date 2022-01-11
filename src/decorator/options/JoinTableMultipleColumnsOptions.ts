@@ -32,5 +32,10 @@ export interface JoinTableMultipleColumnsOptions {
      * Works only in some databases (like postgres and mssql).
      */
     schema?: string;
+    
+    /**
+     * Whether the onUpdate on the created foreign keys should be omitted.
+     */
+     omitOnUpdate?: boolean;
 
 }

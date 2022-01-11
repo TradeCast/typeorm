@@ -36,6 +36,7 @@ export function JoinTable(options?: JoinTableOptions|JoinTableMultipleColumnsOpt
             inverseJoinColumns: (options && (options as JoinTableOptions).inverseJoinColumn ? [(options as JoinTableOptions).inverseJoinColumn!] : (options as JoinTableMultipleColumnsOptions).inverseJoinColumns) as any,
             schema: options && options.schema ? options.schema : undefined,
             database: options && options.database ? options.database : undefined,
+            omitOnUpdate: options.omitOnUpdate || false,
         } as JoinTableMetadataArgs);
     };
 }

@@ -43,4 +43,9 @@ export interface JoinTableMetadataArgs {
      */
     readonly schema?: string;
 
+    /**
+     * Whether the onUpdate on the created foreign keys should be omitted.
+     */
+    readonly omitOnUpdate?: boolean;
+
 }
