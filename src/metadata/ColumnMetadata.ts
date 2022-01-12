@@ -329,7 +329,7 @@ export class ColumnMetadata {
     // ---------------------------------------------------------------------
 
     constructor(options: {
-        connection: DataSource
+        connection: Connection
         entityMetadata: EntityMetadata
         embeddedMetadata?: EmbeddedMetadata
         referencedColumn?: ColumnMetadata

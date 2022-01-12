@@ -115,11 +115,13 @@ export class ForeignKeyMetadata {
             (column) => column.databaseName,
         )
         this.referencedTablePath = this.referencedEntityMetadata.tablePath
-        this.name = this.givenName ? this.givenName : namingStrategy.foreignKeyName(
-            this.entityMetadata.tableName,
-            this.columnNames,
-            this.referencedEntityMetadata.tableName,
-            this.referencedColumnNames,
-        )
+        this.name = this.givenName
+            ? this.givenName
+            : namingStrategy.foreignKeyName(
+                  this.entityMetadata.tableName,
+                  this.columnNames,
+                  this.referencedEntityMetadata.tableName,
+                  this.referencedColumnNames,
+              )
     }
 }

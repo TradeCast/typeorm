@@ -16,5 +16,4 @@ export interface JoinColumnOptions {
      * Name of the foreign key constraint.
      */
     constraintName?: string
-
 }
