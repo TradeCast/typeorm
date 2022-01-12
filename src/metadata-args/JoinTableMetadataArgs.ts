@@ -1,4 +1,5 @@
 import {JoinColumnMetadataArgs} from "./JoinColumnMetadataArgs";
+import {JoinTableIndexMetadataArgs} from "./JoinTableIndexMetadataArgs";
 
 /**
  * Arguments for JoinTableMetadata class.
@@ -42,5 +43,11 @@ export interface JoinTableMetadataArgs {
      * Works only in some databases (like postgres and mssql).
      */
     readonly schema?: string;
+
+    /**
+     * Names for indices.
+     * By default these are auto generated.
+     */
+    readonly indices?: JoinTableIndexMetadataArgs;
 
 }

@@ -184,6 +184,7 @@ export class EntitySchemaTransformer {
                                 schema: relationSchema.joinTable.schema,
                                 joinColumns: ((relationSchema.joinTable as JoinTableOptions).joinColumn ? [(relationSchema.joinTable as JoinTableOptions).joinColumn!] : (relationSchema.joinTable as JoinTableMultipleColumnsOptions).joinColumns) as any,
                                 inverseJoinColumns: ((relationSchema.joinTable as JoinTableOptions).inverseJoinColumn ? [(relationSchema.joinTable as JoinTableOptions).inverseJoinColumn!] : (relationSchema.joinTable as JoinTableMultipleColumnsOptions).inverseJoinColumns) as any,
+                                indices: relationSchema.joinTable.indices,
                             };
                             metadataArgsStorage.joinTables.push(joinTable);
                         }
