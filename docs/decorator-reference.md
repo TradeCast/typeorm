@@ -496,12 +496,12 @@ export class Post {
         joinColumn: {
             name: "question",
             referencedColumnName: "id",
-            constraintName: "fk_question_categories_questionId"
+            constraintName: "fk_question_categories_questionId",
         },
         inverseJoinColumn: {
             name: "category",
             referencedColumnName: "id",
-            constraintName: "fk_question_categories_categoryId"
+            constraintName: "fk_question_categories_categoryId",
         },
     })
     categories: Category[]
