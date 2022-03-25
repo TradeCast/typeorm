@@ -248,6 +248,7 @@ export class JunctionEntityMetadataBuilder {
                 entityMetadata: entityMetadata,
                 columns: junctionColumns,
                 args: {
+                    name: joinTable.indices?.ownerName,
                     target: entityMetadata.target,
                     synchronize: true,
                 },
@@ -257,6 +258,7 @@ export class JunctionEntityMetadataBuilder {
                 entityMetadata: entityMetadata,
                 columns: inverseJunctionColumns,
                 args: {
+                    name: joinTable.indices?.inverseName,
                     target: entityMetadata.target,
                     synchronize: true,
                 },

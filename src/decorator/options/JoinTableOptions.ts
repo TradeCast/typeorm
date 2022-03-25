@@ -1,4 +1,5 @@
 import { JoinColumnOptions } from "./JoinColumnOptions"
+import { JoinTableIndexOptions } from "./JoinTableIndexOptions"
 
 /**
  * Describes join table options.
@@ -31,4 +32,10 @@ export interface JoinTableOptions {
      * Works only in some databases (like postgres and mssql).
      */
     schema?: string
+
+    /**
+     * Names for indices.
+     * By default these are auto generated.
+     */
+    indices?: JoinTableIndexOptions
 }

@@ -203,6 +203,7 @@ export class EntitySchemaTransformer {
                             name: relationSchema.joinTable.name,
                             database: relationSchema.joinTable.database,
                             schema: relationSchema.joinTable.schema,
+                            indices: relationSchema.joinTable.indices,
                             joinColumns: ((
                                 relationSchema.joinTable as JoinTableOptions
                             ).joinColumn

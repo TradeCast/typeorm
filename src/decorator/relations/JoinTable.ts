@@ -50,6 +50,7 @@ export function JoinTable(
             schema: options && options.schema ? options.schema : undefined,
             database:
                 options && options.database ? options.database : undefined,
+            indices: options.indices,
         } as JoinTableMetadataArgs)
     }
 }
