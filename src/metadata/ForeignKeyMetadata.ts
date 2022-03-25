@@ -73,7 +73,7 @@ export class ForeignKeyMetadata {
     /**
      * User specified unique constraint name.
      */
-    givenName?: string;
+    givenName?: string
 
     // ---------------------------------------------------------------------
     // Constructor
