@@ -1,43 +1,41 @@
-import {JoinColumnOptions} from "./JoinColumnOptions";
-import {JoinTableIndexOptions} from "./JoinTableIndexOptions";
+import { JoinColumnOptions } from "./JoinColumnOptions"
+import { JoinTableIndexOptions } from "./JoinTableIndexOptions"
 
 /**
  * Describes join table options.
  */
 export interface JoinTableOptions {
-
     /**
      * Name of the table that will be created to store values of the both tables (join table).
      * By default is auto generated.
      */
-    name?: string;
+    name?: string
 
     /**
      * First column of the join table.
      */
-    joinColumn?: JoinColumnOptions;
+    joinColumn?: JoinColumnOptions
 
     /**
      * Second (inverse) column of the join table.
      */
-    inverseJoinColumn?: JoinColumnOptions;
+    inverseJoinColumn?: JoinColumnOptions
 
     /**
      * Database where join table will be created.
      * Works only in some databases (like mysql and mssql).
      */
-    database?: string;
+    database?: string
 
     /**
      * Schema where join table will be created.
      * Works only in some databases (like postgres and mssql).
      */
-    schema?: string;
+    schema?: string
 
     /**
      * Names for indices.
      * By default these are auto generated.
      */
-    indices?: JoinTableIndexOptions;
-
+    indices?: JoinTableIndexOptions
 }
