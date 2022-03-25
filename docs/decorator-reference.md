@@ -464,7 +464,7 @@ Learn more about [many-to-many relations](many-to-many-relations.md).
 #### `@JoinColumn`
 
 Defines which side of the relation contains the join column with a foreign key and
-allows you to customize the join column name and referenced column name.
+allows you to customize the join column name, referenced column name, and foreign key name.
 Example:
 
 ```typescript
@@ -474,6 +474,7 @@ export class Post {
     @JoinColumn({
         name: "cat_id",
         referencedColumnName: "name",
+        constraintName: "fk_cat_id",
     })
     category: Category
 }
@@ -483,7 +484,7 @@ export class Post {
 
 Used for `many-to-many` relations and describes join columns of the "junction" table.
 Junction table is a special, separate table created automatically by TypeORM with columns referenced to the related entities.
-You can change the name of the generated "junction" table and also the column names inside the junction table and their referenced columns with the `joinColumn`- and `inverseJoinColumn` attributes.
+You can change the name of the generated "junction" table, the column names inside the junction table, their referenced columns with the `joinColumn`- and `inverseJoinColumn` attributes, and the created foreign keys their names.
 Example:
 
 ```typescript
@@ -495,10 +496,12 @@ export class Post {
         joinColumn: {
             name: "question",
             referencedColumnName: "id",
+            constraintName: "fk_question_categories_questionId"
         },
         inverseJoinColumn: {
             name: "category",
             referencedColumnName: "id",
+            constraintName: "fk_question_categories_categoryId"
         },
     })
     categories: Category[]

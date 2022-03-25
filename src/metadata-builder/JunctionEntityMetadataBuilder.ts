@@ -88,6 +88,7 @@ export class JunctionEntityMetadataBuilder {
                 connection: this.connection,
                 entityMetadata: entityMetadata,
                 referencedColumn: referencedColumn,
+                constraintName: joinColumn?.constraintName,
                 args: {
                     target: "",
                     mode: "virtual",
@@ -151,6 +152,7 @@ export class JunctionEntityMetadataBuilder {
                     connection: this.connection,
                     entityMetadata: entityMetadata,
                     referencedColumn: inverseReferencedColumn,
+                    constraintName: joinColumn?.constraintName,
                     args: {
                         target: "",
                         mode: "virtual",
@@ -210,6 +212,7 @@ export class JunctionEntityMetadataBuilder {
         entityMetadata.foreignKeys = relation.createForeignKeyConstraints
             ? [
                   new ForeignKeyMetadata({
+                      name: junctionColumns[0]?.constraintName,
                       entityMetadata: entityMetadata,
                       referencedEntityMetadata: relation.entityMetadata,
                       columns: junctionColumns,
@@ -221,6 +224,7 @@ export class JunctionEntityMetadataBuilder {
                               : relation.onUpdate || "CASCADE",
                   }),
                   new ForeignKeyMetadata({
+                      name: inverseJunctionColumns[0]?.constraintName,
                       entityMetadata: entityMetadata,
                       referencedEntityMetadata: relation.inverseEntityMetadata,
                       columns: inverseJunctionColumns,
