@@ -1,9 +1,13 @@
 {
-  "name": "typeorm",
+  "name": "@tradecast/typeorm",
   "private": true,
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Data-Mapper ORM for TypeScript, ES7, ES6, ES5. Supports MySQL, PostgreSQL, MariaDB, SQLite, MS SQL Server, Oracle, MongoDB databases.",
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.tradecast.eu:4879",
+    "always-auth": true
+  },
   "readmeFilename": "README.md",
   "author": {
     "name": "Umed Khudoiberdiev",

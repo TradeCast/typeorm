@@ -1,3 +1,48 @@
+## [0.3.5](https://github.com/typeorm/typeorm/compare/0.3.3...0.3.5) (2022-03-29)
+
+
+### Bug Fixes
+
+* BaseEntity.reload method regression and made `findOne` to throw error on missing conditions in runtime ([#8801](https://github.com/typeorm/typeorm/issues/8801)) ([512914e](https://github.com/typeorm/typeorm/commit/512914e3a47ab6c9ea5a52e4aae38931d0dee087))
+* broken shebang parameters of `cli-ts-node-commonjs` and `cli-ts-node-esm` on some linux distros ([#8821](https://github.com/typeorm/typeorm/issues/8821)) ([8ec4e4c](https://github.com/typeorm/typeorm/commit/8ec4e4c3fa6f06a410003fa6d7da56ec04108e9e)), closes [#8818](https://github.com/typeorm/typeorm/issues/8818)
+* find select object api should support false values [#8796](https://github.com/typeorm/typeorm/issues/8796) ([#8807](https://github.com/typeorm/typeorm/issues/8807)) ([dacac45](https://github.com/typeorm/typeorm/commit/dacac455250d978235d2bc0d8c588a41fea9aeea))
+* improve DeepPartial recursion ([#8732](https://github.com/typeorm/typeorm/issues/8732)) ([789582c](https://github.com/typeorm/typeorm/commit/789582c93be7d5290c90850a9e5deb56d2508dd2)), closes [#8681](https://github.com/typeorm/typeorm/issues/8681)
+* missing timestamp in created migrations filenames ([#8802](https://github.com/typeorm/typeorm/issues/8802)) ([19c2c4a](https://github.com/typeorm/typeorm/commit/19c2c4a430cdd076a31edd25c9187bfe449ca65b))
+* PoolConnection leaked by MysqlDriver ([#8803](https://github.com/typeorm/typeorm/issues/8803)) ([e15509c](https://github.com/typeorm/typeorm/commit/e15509cc7f97ecd3ed9f8d21780fef6f8c8e3073))
+* remove console.log calls from SelectQueryBuilder ([#8795](https://github.com/typeorm/typeorm/issues/8795)) ([54c7db4](https://github.com/typeorm/typeorm/commit/54c7db49355bb09514b6e977d1d7235c02557a0b)), closes [#8792](https://github.com/typeorm/typeorm/issues/8792)
+* stop crashing when redis is offline and ignoreErrors on cache options is set ([#8725](https://github.com/typeorm/typeorm/issues/8725)) ([2ebd714](https://github.com/typeorm/typeorm/commit/2ebd714639975a4ac4a41be48661cda038ef2edc))
+
+
+### Features
+
+* add constraintName to JoinColumn ([4a1ad5d](https://github.com/typeorm/typeorm/commit/4a1ad5d67838f678657d06c058b8cc13bfb4eebb)), closes [#1355](https://github.com/typeorm/typeorm/issues/1355)
+* add constraintName to JoinColumn ([487ceb4](https://github.com/typeorm/typeorm/commit/487ceb4c73ee5cc3f4e4b5d357fce77042dbaa66)), closes [#1355](https://github.com/typeorm/typeorm/issues/1355)
+* add constraintName to JoinColumn ([559bc59](https://github.com/typeorm/typeorm/commit/559bc5925cf564afe850a96f6ad7e9a8a50fe9de))
+* add constraintName to JoinColumn ([6f623c2](https://github.com/typeorm/typeorm/commit/6f623c2dfbadf75a9a9926a0f75f040b7469157f)), closes [#1355](https://github.com/typeorm/typeorm/issues/1355)
+* add constraintName to JoinColumn ([98639fc](https://github.com/typeorm/typeorm/commit/98639fc1189945c0d39bdbaff56357f3e8aea8b7)), closes [#1355](https://github.com/typeorm/typeorm/issues/1355)
+* add constraintName to JoinColumn ([b377aec](https://github.com/typeorm/typeorm/commit/b377aecb426eb9452799d1e4be1944a21cde2202))
+* add index naming to joinTable options ([bf4466b](https://github.com/typeorm/typeorm/commit/bf4466be43523f7086dd38b9a49e345ec00b85fd))
+* add index naming to joinTable options ([ba9f6bb](https://github.com/typeorm/typeorm/commit/ba9f6bbca74318528e1b0184c7c4815dd3dc0ef9))
+* add support for insert with alias ([#4003](https://github.com/typeorm/typeorm/issues/4003)) ([#8791](https://github.com/typeorm/typeorm/issues/8791)) ([2c13e12](https://github.com/typeorm/typeorm/commit/2c13e127c3393b873a24c4d56d396bbd8e6ce62e))
+* applicationName parameter for CockroachDB ([#8800](https://github.com/typeorm/typeorm/issues/8800)) ([0b60139](https://github.com/typeorm/typeorm/commit/0b601398507b36eb014e57a18f2f82acf384100a))
+
+
+
+## [0.3.3](https://github.com/typeorm/typeorm/compare/0.3.2...0.3.3) (2022-03-23)
+
+
+### Bug Fixes
+
+* improve initialization of custom repository ([#8782](https://github.com/typeorm/typeorm/issues/8782)) ([52a641c](https://github.com/typeorm/typeorm/commit/52a641ca7ce8e4b168155b5043d1e9289c694fc7))
+* resolve entities correctly in datasource when globs are specified ([#8778](https://github.com/typeorm/typeorm/issues/8778)) ([a641c5d](https://github.com/typeorm/typeorm/commit/a641c5dff86df683b84e14873e88011013258f87))
+
+
+### Features
+
+* support for Common Table Expressions ([#8534](https://github.com/typeorm/typeorm/issues/8534)) ([7cc1848](https://github.com/typeorm/typeorm/commit/7cc1848fd4a44aefa986026ee659ed872ea6ab8f)), closes [#1116](https://github.com/typeorm/typeorm/issues/1116) [#5899](https://github.com/typeorm/typeorm/issues/5899) [#4753](https://github.com/typeorm/typeorm/issues/4753)
+
+
+
 ## [0.3.4](https://github.com/typeorm/typeorm/compare/0.3.3...0.3.4) (2022-03-26)
 
 ### Bug Fixes

@@ -75,16 +75,6 @@ export class ForeignKeyMetadata {
      */
     givenName?: string
 
-    /**
-     * User specified unique constraint name.
-     */
-    givenName?: string
-
-    /**
-     * User specified unique constraint name.
-     */
-    givenName?: string
-
     // ---------------------------------------------------------------------
     // Constructor
     // ---------------------------------------------------------------------

@@ -160,10 +160,11 @@ export class JunctionEntityMetadataBuilder {
                         options: {
                             length:
                                 !inverseReferencedColumn.length &&
-                                (this.connection.driver instanceof
-                                    MysqlDriver ||
-                                    this.connection.driver instanceof
-                                        AuroraDataApiDriver) &&
+                                (DriverUtils.isMySQLFamily(
+                                    this.connection.driver,
+                                ) ||
+                                    this.connection.driver.options.type ===
+                                        "aurora-mysql") &&
                                 (inverseReferencedColumn.generationStrategy ===
                                     "uuid" ||
                                     inverseReferencedColumn.type === "uuid")
@@ -218,7 +219,7 @@ export class JunctionEntityMetadataBuilder {
                       referencedColumns: referencedColumns,
                       onDelete: relation.onDelete || "CASCADE",
                       onUpdate:
-                          this.connection.driver instanceof OracleDriver
+                          this.connection.driver.options.type === "oracle"
                               ? "NO ACTION"
                               : relation.onUpdate || "CASCADE",
                   }),
@@ -232,7 +233,7 @@ export class JunctionEntityMetadataBuilder {
                           ? relation.inverseRelation.onDelete
                           : "CASCADE",
                       onUpdate:
-                          this.connection.driver instanceof OracleDriver
+                          this.connection.driver.options.type === "oracle"
                               ? "NO ACTION"
                               : relation.inverseRelation
                               ? relation.inverseRelation.onUpdate

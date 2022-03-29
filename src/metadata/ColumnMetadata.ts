@@ -285,16 +285,6 @@ export class ColumnMetadata {
     constraintName?: string
 
     /**
-     * If this column is foreign key then this specifies the name for it.
-     */
-    constraintName?: string
-
-    /**
-     * If this column is foreign key then this specifies the name for it.
-     */
-    constraintName?: string
-
-    /**
      * Specifies a value transformer that is to be used to (un)marshal
      * this column when reading or writing to the database.
      */
@@ -339,7 +329,7 @@ export class ColumnMetadata {
     // ---------------------------------------------------------------------
 
     constructor(options: {
-        connection: Connection
+        connection: DataSource
         entityMetadata: EntityMetadata
         embeddedMetadata?: EmbeddedMetadata
         referencedColumn?: ColumnMetadata

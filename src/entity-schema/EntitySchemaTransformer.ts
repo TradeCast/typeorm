@@ -226,7 +226,6 @@ export class EntitySchemaTransformer {
                                 : (
                                       relationSchema.joinTable as JoinTableMultipleColumnsOptions
                                   ).inverseJoinColumns) as any,
-                            indices: relationSchema.joinTable.indices,
                         }
                         metadataArgsStorage.joinTables.push(joinTable)
                     }
